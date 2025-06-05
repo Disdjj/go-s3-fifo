@@ -75,7 +75,11 @@ func (c *FIFOCache[K, V]) ContainsWithFreq(key K) (ok bool, freq int32) {
 }
 
 func (c *FIFOCache[K, V]) Capacity() int {
-	return c.maxCapa
+	return c.maxCapacity
+}
+
+func (c *FIFOCache[K, V]) MaxCapacity() int {
+	return c.capacity
 }
 
 func (c *FIFOCache[K, V]) IncrFreq(key K) {
